@@ -7,6 +7,10 @@
       </template>
     </view>
     <view>Pinia: {{ user.userInfo }}</view>
+    <view>Axios
+      <button type="primary" size="mini" @click="onRequest">请求</button>
+    </view>
+    <br />
     <!-- 底部导航 -->
     <view class="bottom-bar">
       <tabBar></tabBar>
@@ -15,6 +19,7 @@
 </template>
 
 <script setup>
+import { wxLogin, getPhoneNumber } from '@/api/user.js'
 import { useUserStore } from '@p/user.js'
 import tabBar from '@/components/tab-bar/tab-bar.vue'
 
@@ -44,19 +49,22 @@ plusOne.value = 1
 const obj = reactive({ count: 0 })
 obj.count++
 
-
-const books = reactive([ref('vue 3 guide')])
-const listLoading = false
-const getList = function () {
-  listAll = []
-  const arr = []
-  for (var i = 0; i < 10; i++) {
-    listAll.push(i)
-  }
+const onRequest = async () => {
+  uni.login({
+    provider: 'weixin',
+    success: loginRes => {
+      console.log('loginRes--->>', loginRes)
+      const jsCode = loginRes.code
+      wxLogin({ jsCode }).then((res) => {
+        const { openId } = res.data
+        user.setUserInfo({ openId })
+      })
+    }
+  })
 }
 
+
 onMounted(() => {
-  getList()
 })
 </script>
 
