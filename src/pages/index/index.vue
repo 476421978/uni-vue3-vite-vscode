@@ -1,48 +1,70 @@
 <template>
-  <view class="content">
-    <image class="logo" src="/static/logo.png"></image>
-    <view class="text-area">
-      <text class="title">{{ title }}</text>
+  <view class="page-index">
+    <view class="content-box">
+      <view>{{ title }}</view>
+      <template v-for="(item, index) in listAll" :key="index">
+        <view>{{ item }}</view>
+      </template>
+    </view>
+    <!-- 底部导航 -->
+    <view class="bottom-bar">
+      <tabBar></tabBar>
     </view>
   </view>
 </template>
 
-<script>
-export default {
-  data() {
-    return {
-      title: 'Hello',
-    }
+<script setup>
+import tabBar from '../../components/tab-bar/tab-bar.vue'
+
+const title = ref('主页title')
+let listAll = ref([{
+  id: 0,
+  name: 'item-one'
+}])
+
+const count = ref(1)
+const plusOne = computed({
+  get: () => {
+    count.value + 1
   },
-  onLoad() {},
-  methods: {},
+  set: (val) => {
+    count.value = val - 1
+  }
+})
+plusOne.value = 1
+
+const obj = reactive({ count: 0 })
+obj.count++
+
+
+const books = reactive([ref('vue 3 guide')])
+const listLoading = false
+const getList = function () {
+  listAll = []
+  const arr = []
+  for (var i = 0; i < 10; i++) {
+    listAll.push(i)
+  }
 }
+
+onMounted(() => {
+  getList()
+})
 </script>
 
-<style>
-.content {
+<style lang="scss">
+.page-index {
   display: flex;
   flex-direction: column;
-  align-items: center;
-  justify-content: center;
-}
 
-.logo {
-  height: 200rpx;
-  width: 200rpx;
-  margin-top: 200rpx;
-  margin-left: auto;
-  margin-right: auto;
-  margin-bottom: 50rpx;
-}
+  .content-box {
+    flex: 1;
+    overflow-y: auto;
+  }
 
-.text-area {
-  display: flex;
-  justify-content: center;
-}
-
-.title {
-  font-size: 36rpx;
-  color: #8f8f94;
-}
-</style>
+  .bottom-bar {
+    position: absolute;
+    width: 100%;
+    bottom: 0;
+  }
+}</style>

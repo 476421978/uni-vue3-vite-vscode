@@ -1,7 +1,10 @@
 # uni-vue3-vite-vscode
 
 #### 介绍
-uni-app 的 uni-preset-vue 模版
+npx degit dcloudio/uni-preset-vue#vite my-vue3-project
+基于 uni-app 的 uni-preset-vue 模版二次开发
+
+node 16
 vue3 setup语法糖
 vite
 vscode 工具

@@ -36,6 +36,7 @@
     "build:quickapp-webview": "uni build -p quickapp-webview",
     "build:quickapp-webview-huawei": "uni build -p quickapp-webview-huawei",
     "build:quickapp-webview-union": "uni build -p quickapp-webview-union"
+
   },
   "dependencies": {
     "@dcloudio/uni-app": "3.0.0-3080420230531001",
@@ -52,7 +53,12 @@
     "@dcloudio/uni-mp-weixin": "3.0.0-3080420230531001",
     "@dcloudio/uni-quickapp-webview": "3.0.0-3080420230531001",
     "vue": "^3.2.45",
-    "vue-i18n": "^9.1.9"
+    "vue-i18n": "^9.1.9",
+    "path": "^0.12.7",
+    "sass": "^1.59.3",
+    "sass-loader": "^13.2.1",
+    "unplugin-auto-import": "^0.15.1",
+    "unplugin-vue-components": "^0.24.1"
   },
   "devDependencies": {
     "@dcloudio/types": "^3.3.2",
