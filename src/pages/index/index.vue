@@ -10,7 +10,9 @@
     <view>Axios
       <button type="primary" size="mini" @click="onRequest">请求</button>
     </view>
-    <br />
+    <view>
+      uni-ui:<uni-icons type="bars" size="16"></uni-icons>
+    </view>
     <!-- 底部导航 -->
     <view class="bottom-bar">
       <tabBar></tabBar>
