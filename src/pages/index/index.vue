@@ -6,6 +6,7 @@
         <view>{{ item }}</view>
       </template>
     </view>
+    <view>Pinia: {{ user.userInfo }}</view>
     <!-- 底部导航 -->
     <view class="bottom-bar">
       <tabBar></tabBar>
@@ -14,7 +15,14 @@
 </template>
 
 <script setup>
-import tabBar from '../../components/tab-bar/tab-bar.vue'
+import { useUserStore } from '@p/user.js'
+import tabBar from '@/components/tab-bar/tab-bar.vue'
+
+// 设置用户信息 - 打印用户信息
+const user = useUserStore()
+const data = { userName: 'hlg' }
+user.setUserInfo(data)
+console.log(user.userInfo)
 
 const title = ref('主页title')
 let listAll = ref([{
@@ -67,4 +75,5 @@ onMounted(() => {
     width: 100%;
     bottom: 0;
   }
-}</style>
+}
+</style>
