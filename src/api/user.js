@@ -1,22 +1,19 @@
 import { request } from '@/utils/uniReq'
 
 /**
- * @description 授权登录
- * @param {*} data
+ * @description 用户登录
  */
-export function wxLogin() {
+export function userLogin() {
   return request({
-    url: '/api/getRoleById'
+    url: '/api/user/login'
   })
 }
 
 /**
- * @description 获取手机号
- * @param {*} data
+ * @description 获取用户信息
  */
-export function getPhoneNumber(data) {
+export function userInfo() {
   return request({
-    url: '/wx/getPhoneNumber',
-    method: 'POST'
+    url: '/api/user/userInfo'
   })
 }

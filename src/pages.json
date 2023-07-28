@@ -7,9 +7,9 @@
   },
   "pages": [
     {
-      "path": "pages/index/index",
+      "path": "pages/login/index",
       "style": {
-        "navigationBarTitleText": "uni-app"
+        "navigationBarTitleText": "登录页"
       }
     }
   ],
