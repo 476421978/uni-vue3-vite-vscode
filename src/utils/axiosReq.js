@@ -2,7 +2,7 @@ import axios from 'axios'
 import mpAdapter from 'axios-miniprogram-adapter'
 axios.defaults.adapter = mpAdapter
 
-import {netConfig} from '@/config/request.config'
+import { netConfig } from '@/config/request.config'
 const { baseURL, contentType, requestTimeout, successCode } = netConfig
 
 let tokenLose = true

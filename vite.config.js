@@ -6,12 +6,15 @@ import AutoImport from 'unplugin-auto-import/vite'
 import Components from 'unplugin-vue-components/vite'
 import path from 'path'
 
+import { viteMockServe } from 'vite-plugin-mock'
+
 export default defineConfig({
   resolve: {
     alias: {
       '@': `${path.resolve(__dirname, 'src')}`,
       '@s': `${path.resolve('src/static')}`,
-      '@p': `${path.resolve('src/pinia-store')}`
+      '@p': `${path.resolve('src/pinia-store')}`,
+      '@c': `${path.resolve('src/components')}`
     }
   },
   plugins: [
@@ -26,6 +29,10 @@ export default defineConfig({
       // uni-app
       imports: ['vue', 'vue-router', 'uni-app']
     }),
-    Components()
+    Components(),
+    viteMockServe({
+      mockPath: 'mock',
+      enable: true
+    })
   ]
 })

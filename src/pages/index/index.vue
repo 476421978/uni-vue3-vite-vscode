@@ -6,13 +6,13 @@
         <view>{{ item }}</view>
       </template>
     </view>
+    <view> count: {{ count }} plusOne: {{ plusOne }} </view>
     <view>Pinia: {{ user.userInfo }}</view>
-    <view>Axios
+    <view
+      >Axios2
       <button type="primary" size="mini" @click="onRequest">请求</button>
     </view>
-    <view>
-      uni-ui:<uni-icons type="bars" size="16"></uni-icons>
-    </view>
+    <view> uni-ui:<uni-icons type="bars" size="16"></uni-icons> </view>
     <!-- 底部导航 -->
     <view class="bottom-bar">
       <tabBar></tabBar>
@@ -29,13 +29,14 @@ import tabBar from '@/components/tab-bar/tab-bar.vue'
 const user = useUserStore()
 const data = { userName: 'hlg' }
 user.setUserInfo(data)
-console.log(user.userInfo)
 
 const title = ref('主页title')
-let listAll = ref([{
-  id: 0,
-  name: 'item-one'
-}])
+let listAll = ref([
+  {
+    id: 0,
+    name: 'item-one'
+  }
+])
 
 const count = ref(1)
 const plusOne = computed({
@@ -51,23 +52,13 @@ plusOne.value = 1
 const obj = reactive({ count: 0 })
 obj.count++
 
-const onRequest = async () => {
-  uni.login({
-    provider: 'weixin',
-    success: loginRes => {
-      console.log('loginRes--->>', loginRes)
-      const jsCode = loginRes.code
-      wxLogin({ jsCode }).then((res) => {
-        const { openId } = res.data
-        user.setUserInfo({ openId })
-      })
-    }
+const onRequest = () => {
+  wxLogin().then((res) => {
+    console.log('res---', res)
   })
 }
 
-
-onMounted(() => {
-})
+onMounted(() => {})
 </script>
 
 <style lang="scss">

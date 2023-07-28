@@ -1,15 +1,12 @@
-import request from '@/utils/request'
+import { request } from '@/utils/uniReq'
 
 /**
  * @description 授权登录
  * @param {*} data
  */
-export function wxLogin(data) {
+export function wxLogin() {
   return request({
-    url: '/wx/code2Session',
-    method: 'post',
-    params: {},
-    data
+    url: '/api/getRoleById'
   })
 }
 
@@ -20,8 +17,6 @@ export function wxLogin(data) {
 export function getPhoneNumber(data) {
   return request({
     url: '/wx/getPhoneNumber',
-    method: 'post',
-    params: {},
-    data
+    method: 'POST'
   })
 }

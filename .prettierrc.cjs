@@ -75,5 +75,4 @@ module.exports = {
   // 格式化嵌入的内容222
 
   embeddedLanguageFormatting: 'auto'
-  
 }
