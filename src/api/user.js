@@ -3,9 +3,11 @@ import { request } from '@/utils/uniReq'
 /**
  * @description 用户登录
  */
-export function userLogin() {
+export function userLogin(data) {
   return request({
-    url: '/api/user/login'
+    url: '/api/user/login',
+    method: 'POST',
+    data
   })
 }
 
@@ -14,6 +16,6 @@ export function userLogin() {
  */
 export function userInfo() {
   return request({
-    url: '/api/user/userInfo'
+    url: '/api/user/info'
   })
 }

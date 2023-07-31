@@ -1,7 +1,7 @@
 <template>
   <div>
-    <form @submit="formSubmit" @reset="formReset">
-      <input class="uni-input" name="userPhone" v-model="userPhone" focus placeholder="请输入手机号" />
+    <form @submit="formSubmit">
+      <input class="uni-input" name="userPhone" v-model="userPhone" placeholder="请输入手机号" />
 
       <input class="uni-input" name="userPwd" v-model="userPwd" password placeholder="请输入密码" />
 
@@ -13,16 +13,18 @@
 </template>
 
 <script setup>
+import { userLogin } from '@/api/user'
 let userPhone = ref('')
 let userPwd = ref('')
 
-function formSubmit(e) {
-  console.log('form发生了submit事件，携带数据为：' + JSON.stringify(e.detail.value))
+async function formSubmit(e) {
   var formdata = e.detail.value
-  uni.showModal({
-    content: '表单数据内容：' + JSON.stringify(formdata),
-    showCancel: false
-  })
+  const params = {
+    userPhone: userPhone.value,
+    userPwd: userPwd.value
+  }
+  const res = await userLogin(params)
+  console.log('res-----', res)
 }
 </script>
 
