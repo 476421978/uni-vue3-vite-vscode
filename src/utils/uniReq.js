@@ -26,6 +26,8 @@ const codeStatus = function (code, errorText) {
       break
   }
 
+  if (errorText && typeof errorText === 'string') errInfo = errorText
+
   // 返回错误信息
   return errInfo
 }
@@ -41,13 +43,8 @@ function request({ url, method = 'GET', data = {}, header = { 'content-type': co
       data,
       success: (res) => {
         uni.hideLoading()
-
         if (res.statusCode !== 200) throw codeStatus(code, '网络连接失败，请稍后重试')
-
         const { code, msg, data, message } = res.data
-
-        console.log('msg----', msg)
-
         if (message === 'ok') {
           resolve(data)
         } else {
@@ -55,7 +52,6 @@ function request({ url, method = 'GET', data = {}, header = { 'content-type': co
         }
       },
       fail: (err) => {
-        console.log('err----', err)
         uni.hideLoading()
         Toast(err)
         reject(err)

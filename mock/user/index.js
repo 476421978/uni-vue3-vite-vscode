@@ -4,7 +4,6 @@ const userLogin = {
   url: '/api/user/login',
   method: 'post',
   response: ({ body }) => {
-    console.log('body--->>>', body)
     const { userPhone, userPwd } = body
     if (!userPhone || !userPwd) baseData.msg = '账号或者密码不能为空'
 
