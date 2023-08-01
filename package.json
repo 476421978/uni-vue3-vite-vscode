@@ -35,8 +35,6 @@
     "path": "^0.12.7",
     "pinia": "2.0.36",
     "pinia-plugin-unistorage": "^0.0.17",
-    "sass": "^1.59.3",
-    "sass-loader": "^13.2.1",
     "unplugin-auto-import": "^0.15.1",
     "unplugin-vue-components": "^0.24.1",
     "vite-plugin-mock": "2.9.6",
@@ -50,6 +48,8 @@
     "@dcloudio/uni-stacktracey": "3.0.0-3080720230703001",
     "@dcloudio/uni-vue-devtools": "3.0.0-3080720230703001",
     "@dcloudio/vite-plugin-uni": "3.0.0-3080720230703001",
+    "sass": "^1.64.2",
+    "sass-loader": "^10.1.1",
     "vite": "^4.4.7"
   },
   "volta": {

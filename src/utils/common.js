@@ -15,26 +15,6 @@ export function Toast(title, icon = 'none', duration = 1500) {
 }
 
 /**
- * 缓存操作
- * @param {String} val
- */
-export function setStorageSync(key, data) {
-  uni.setStorageSync(key, data)
-}
-
-export function getStorageSync(key) {
-  return uni.getStorageSync(key)
-}
-
-export function removeStorageSync(key) {
-  return uni.removeStorageSync(key)
-}
-
-export function clearStorageSync() {
-  return uni.clearStorageSync()
-}
-
-/**
  * 页面跳转
  * @param {'navigateTo' | 'redirectTo' | 'reLaunch' | 'switchTab' | 'navigateBack' | number } url  转跳路径
  * @param {String} params 跳转时携带的参数

@@ -14,7 +14,9 @@ export default defineConfig({
       '@': `${path.resolve(__dirname, 'src')}`,
       '@s': `${path.resolve('src/static')}`,
       '@p': `${path.resolve('src/pinia-store')}`,
-      '@c': `${path.resolve('src/components')}`
+      '@c': `${path.resolve('src/components')}`,
+      '@i': `${path.resolve('src/static/images')}`,
+      '@u': `${path.resolve('src/utils')}`
     }
   },
   plugins: [

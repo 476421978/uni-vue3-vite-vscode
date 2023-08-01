@@ -1,4 +1,4 @@
-import { Toast, useRouter } from './common'
+import { Toast } from './common'
 import { netConfig } from '../config/request.config'
 const { baseURL, contentType, requestTimeout } = netConfig
 
@@ -20,7 +20,6 @@ const codeStatus = function (code, errorText) {
       break
     // case 808:
     //   errInfo = '请重新登录'
-    //   useRouter('/login', {}, 'reLaunch')
     //   break
     default:
       break
@@ -43,20 +42,23 @@ function request({ url, method = 'GET', data = {}, header = { 'content-type': co
       data,
       success: (res) => {
         uni.hideLoading()
-        if (res.statusCode !== 200) throw codeStatus(code, '网络连接失败，请稍后重试')
         const { code, msg, data, message } = res.data
+
+        if (res.statusCode !== 200 || message !== 'ok') {
+          const ToastTxt = codeStatus(code, msg)
+          Toast(ToastTxt)
+          reject(new Error(ToastTxt))
+        }
+
         if (message === 'ok') {
           resolve(data)
-        } else {
-          throw codeStatus(code, msg)
         }
       },
       fail: (err) => {
-        uni.hideLoading()
+        loading.visible && uni.hideLoading()
         Toast(err)
         reject(err)
-      },
-      complete: () => {}
+      }
     })
   })
 }
