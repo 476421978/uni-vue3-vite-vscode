@@ -56,8 +56,13 @@ function request({ url, method = 'GET', data = {}, header = { 'content-type': co
       },
       fail: (err) => {
         loading.visible && uni.hideLoading()
-        Toast(err)
-        reject(err)
+        let errText = err
+        //#ifdef MP-WEIXIN
+        errText = err.errMsg
+        console.log('errText', errText);
+        //#endif
+        Toast(errText)
+        reject(errText)
       }
     })
   })

@@ -40,7 +40,9 @@ let userPhone = ref('12345678910')
 let userPwd = ref('123456')
 let loading = ref(false)
 
+//#ifdef H5
 const $isMobile = inject('$isMobile')
+//#endif
 
 function onLogin() {
   const params = {
@@ -66,7 +68,8 @@ function onLogin() {
     left: 0;
     height: 100%;
     width: 100%;
-    & > img {
+    & > img,
+    image {
       width: 100%;
       height: 100%;
       object-fit: cover; // 对图片进行剪切，保留原始比例
@@ -79,6 +82,12 @@ function onLogin() {
     & img {
       width: 150px;
     }
+    //#ifdef MP-WEIXIN
+    & image {
+      height: 60px;
+      width: 170px;
+    }
+    //#endif
   }
   // 登录框
   .form-wrapper {

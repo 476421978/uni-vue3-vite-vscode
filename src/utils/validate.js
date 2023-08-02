@@ -222,7 +222,7 @@ export function validatenum(num, type) {
 /**
  * 判断是否为小数
  */
-export function validatenumord(num, type) {
+export function validateumord(num, type) {
   let regName = /[^\d.]/g
   if (type === 1) {
     if (!regName.test(num)) return false

@@ -1,9 +1,9 @@
 <template>
   <div class="page-home">
-    home
+    func
     <!-- 底部导航 -->
     <view class="bottom-bar">
-      <tabBar :selectIndex="1" />
+      <tabBar :selectIndex="2" />
     </view>
   </div>
 </template>

@@ -21,7 +21,6 @@
 </template>
 
 <script setup>
-import { wxLogin, getPhoneNumber } from '@/api/user.js'
 import { useUserStore } from '@p/user.js'
 import tabBar from '@/components/tab-bar/tab-bar.vue'
 
@@ -52,11 +51,7 @@ plusOne.value = 1
 const obj = reactive({ count: 0 })
 obj.count++
 
-const onRequest = () => {
-  wxLogin().then((res) => {
-    console.log('res---', res)
-  })
-}
+const onRequest = () => {}
 
 onMounted(() => {})
 </script>

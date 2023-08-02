@@ -9,15 +9,10 @@
     {
       "path": "pages/login/index",
       "style": {
-        "app-plus": {
-          "titleNView": false
-        }
-      }
-    },
-    {
-      "path": "pages/index/index",
-      "style": {
-        "app-plus": {
+        "mp-weixin": {
+          "navigationStyle": "custom"
+        },
+        "h5": {
           "titleNView": false
         }
       }
@@ -25,9 +20,19 @@
     {
       "path": "pages/home/index",
       "style": {
-        "app-plus": {
-          "titleNView": false
-        }
+        "navigationBarTitleText": "首页"
+      }
+    },
+    {
+      "path": "pages/func/index",
+      "style": {
+        "navigationBarTitleText": "工具箱"
+      }
+    },
+    {
+      "path": "pages/my/index",
+      "style": {
+        "navigationBarTitleText": "我的"
       }
     }
   ],

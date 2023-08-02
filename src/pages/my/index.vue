@@ -1,9 +1,9 @@
 <template>
   <div class="page-home">
-    home
+    my
     <!-- 底部导航 -->
     <view class="bottom-bar">
-      <tabBar :selectIndex="1" />
+      <tabBar :selectIndex="3" />
     </view>
   </div>
 </template>
