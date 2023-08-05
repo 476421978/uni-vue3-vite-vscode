@@ -41,25 +41,21 @@ function request({ url, method = 'GET', data = {}, header = { 'content-type': co
       header,
       data,
       success: (res) => {
-        uni.hideLoading()
+        loading.visible && uni.hideLoading() // 因为Toast会替换掉Loading所以不能在complete隐藏
         const { code, msg, data, message } = res.data
-
         if (res.statusCode !== 200 || message !== 'ok') {
           const ToastTxt = codeStatus(code, msg)
           Toast(ToastTxt)
           reject(new Error(ToastTxt))
         }
 
-        if (message === 'ok') {
-          resolve(data)
-        }
+        resolve(data)
       },
       fail: (err) => {
         loading.visible && uni.hideLoading()
         let errText = err
         //#ifdef MP-WEIXIN
         errText = err.errMsg
-        console.log('errText', errText);
         //#endif
         Toast(errText)
         reject(errText)

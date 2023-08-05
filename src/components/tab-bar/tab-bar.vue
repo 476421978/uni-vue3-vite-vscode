@@ -29,7 +29,7 @@ const getTabList = computed(() => {
 })
 
 function toPath(item) {
-  useRouter(item.pagePath, {}, 'redirectTo')
+  useRouter(item.pagePath, {}, 'reLaunch')
 }
 </script>
 

@@ -31,13 +31,8 @@ export const UtiLoginOut = async () => {
 
 // 获取token  两种数据缓存混合使用 pinia优先
 export const GetToken = function () {
-  try {
-    const userStore = useUserStore()
-    const isEmpty = JSON.stringify(userStore.userInfo) === '{}'
-    const userInfo = isEmpty ? userStore.userInfo : getStorage('userInfo')
-    return userInfo.token || ''
-  } catch (error) {
-    console.log(error)
-    return ''
-  }
+  const userStore = useUserStore()
+  const isEmpty = JSON.stringify(userStore.userInfo) === '{}'
+  const userInfo = isEmpty ? userStore.userInfo : getStorage('userInfo')
+  return userInfo?.token
 }
