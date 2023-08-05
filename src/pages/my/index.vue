@@ -1,7 +1,7 @@
 <template>
   <div class="page-home">
     my
-    <uni-button @click="onLoginOut">退出</uni-button>
+    <button @click="onLoginOut">退出</button>
     <!-- 底部导航 -->
     <view class="bottom-bar">
       <tabBar :selectIndex="3" />
