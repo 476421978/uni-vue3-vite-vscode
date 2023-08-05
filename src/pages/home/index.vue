@@ -1,6 +1,11 @@
 <template>
   <div class="page-home">
-    home
+    <div>home</div>
+
+    <div class="t-icon t-icon-shutiao" />
+
+    <div class="iconfont icon-shutiao" />
+
     <!-- 底部导航 -->
     <view class="bottom-bar">
       <tabBar :selectIndex="1" />

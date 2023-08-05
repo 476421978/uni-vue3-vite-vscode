@@ -7,6 +7,8 @@ import { setStorage, getStorage, removeStorage, getAllStorage, clearStorage } fr
 // 全局样式
 import '@/static/style/base.css'
 import '@/static/style/uniComponents.scss'
+import '@/static/icon/symbol/iconfont-weapp-icon.css' // 彩色图标
+import '@/static/icon/fontClass/iconfont.css' // 在线fontClass图标
 
 // 设置全局属性
 function setGlobalProperties(app) {

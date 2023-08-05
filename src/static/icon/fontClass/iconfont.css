@@ -1,0 +1,63 @@
+@font-face {
+  font-family: "iconfont"; /* Project id 3534251 */
+  /* 在线引用 */
+  src: url('//at.alicdn.com/t/c/font_3534251_2h0v59abdt4.woff2?t=1663324239877') format('woff2'),
+  url('//at.alicdn.com/t/c/font_3534251_2h0v59abdt4.woff?t=1663324239877') format('woff'),
+  url('//at.alicdn.com/t/c/font_3534251_2h0v59abdt4.ttf?t=1663324239877') format('truetype');
+}
+
+.iconfont {
+  font-family: "iconfont" !important;
+  font-size: 16px;
+  font-style: normal;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.icon-shangchuan:before {
+  content: "\100db";
+}
+
+.icon-kuaijin:before {
+  content: "\100dc";
+}
+
+.icon-jiemi:before {
+  content: "\100da";
+}
+
+.icon-kafei:before {
+  content: "\e657";
+}
+
+.icon-shutiao:before {
+  content: "\e658";
+}
+
+.icon-zhenzhunaicha:before {
+  content: "\e659";
+}
+
+.icon-xuegao:before {
+  content: "\e65a";
+}
+
+.icon-nailao:before {
+  content: "\e65b";
+}
+
+.icon-kele:before {
+  content: "\e65c";
+}
+
+.icon-tiantong:before {
+  content: "\e65d";
+}
+
+.icon-hanbao:before {
+  content: "\e65e";
+}
+
+.icon-xiezishousi:before {
+  content: "\e65f";
+}
