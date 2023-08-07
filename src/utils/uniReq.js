@@ -31,7 +31,7 @@ const codeStatus = function (code, errorText) {
   return errInfo
 }
 
-function request({ url, method = 'GET', data = {}, header = { 'content-type': contentType }, loading = { visible: true, title: 'loading' } }) {
+function request({ url, method = 'GET', data = {}, header = { 'content-type': contentType }, loading = { visible: true, title: 'loading...' } }) {
   return new Promise((resolve, reject) => {
     loading.visible && uni.showLoading({ title: loading.title })
     return uni.request({
